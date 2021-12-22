@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" gridLinesVisible="false" hgap="10" vgap="20" 
+          prefHeight="250" prefWidth="400" styleClass="background"  
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+        
+        <!-- Labels & Text -->
+	<Label alignment="CENTER_RIGHT" styleClass="label-header" text="Login" 
+               GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+	<Label alignment="CENTER_RIGHT" styleClass="label-opac" text="Email:" 
+               GridPane.columnIndex="0" GridPane.rowIndex="1" />
+	<TextField fx:id="emailTF" GridPane.columnIndex="1" GridPane.columnSpan="2" 
+               GridPane.rowIndex="1" />
+	<Label alignment="CENTER_RIGHT" styleClass="label-opac" text="Password:" 
+               GridPane.columnIndex="0" GridPane.rowIndex="2" />
+	<PasswordField fx:id="passwordTF" GridPane.columnIndex="1" GridPane.columnSpan="2" 
+                GridPane.rowIndex="2" />
+	
+        <!-- Blank For incorrect message -->
+        <Label fx:id="errorLbl" alignment="CENTER_LEFT" styleClass="label-error" 
+               GridPane.columnSpan="2" GridPane.rowIndex="3">
+      <GridPane.margin>
+         <Insets left="80.0" />
+      </GridPane.margin></Label>
+       
+        <!-- Buttons -->
+        <HBox alignment="TOP_CENTER" spacing="10" GridPane.columnIndex="1" 
+              GridPane.columnSpan="2" GridPane.rowIndex="4">
+		<Button fx:id="loginBtn" onAction="#handleUserLogin" styleClass="button" text="Login" />
+		<Button fx:id="CancelnBtn" onAction="#handleCancel" styleClass="button" text="Cancel" />
+      <GridPane.margin>
+         <Insets bottom="20.0" />
+      </GridPane.margin>
+	</HBox>
+    <stylesheets>
+        <URL value="@stpfx.css" />
+    </stylesheets>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

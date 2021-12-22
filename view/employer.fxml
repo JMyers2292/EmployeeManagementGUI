@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+
+<GridPane prefHeight="550.0" prefWidth="691.0" styleClass="background" 
+          xmlns:fx="http://javafx.com/fxml/1" 
+          fx:controller="controller.EmployerController">
+    <Label alignment="TOP_LEFT" styleClass="label-header" text="Filters" GridPane.rowIndex="1">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <GridPane.margin>
+         <Insets left="10.0" />
+      </GridPane.margin></Label>
+   <Line endX="589.0" startX="-100.0" stroke="WHITE" strokeMiterLimit="1.0" strokeType="OUTSIDE" GridPane.columnSpan="3" GridPane.rowIndex="3">
+      <GridPane.margin>
+         <Insets bottom="25.0" />
+      </GridPane.margin>
+   </Line>
+    <HBox spacing="20" GridPane.columnSpan="3" GridPane.rowIndex="2">
+        <Label prefHeight="37.0" prefWidth="69.0" styleClass="label-opac" text="Name:" />
+        <TextField fx:id="nameTF" styleClass="filler" prefHeight="31.0" prefWidth="219.0" text="">
+         <HBox.margin>
+            <Insets left="-15.0" />
+         </HBox.margin></TextField>
+        <Label styleClass="label-opac" text="Email:">
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin></Label>
+        <TextField fx:id="emailTF" styleClass="filler" prefHeight="31.0" prefWidth="223.0" text="">
+         <HBox.margin>
+            <Insets left="-15.0" />
+         </HBox.margin>
+      </TextField>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <GridPane.margin>
+         <Insets bottom="10.0" left="50.0" />
+      </GridPane.margin>
+    </HBox>
+   <TableView fx:id="employeeTv" items="${controller.Employer.Employees}" prefHeight="302.0" prefWidth="409.0" styleClass="column-header" GridPane.columnSpan="3" GridPane.rowIndex="4">
+       <placeholder><Label text="Employees list is not loaded" /></placeholder>
+     <columns>
+         <TableColumn fx:id="nameClm" prefWidth="225.0" styleClass="text-out" text="Name" />
+             <!--<cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+         </TableColumn>-->
+         <TableColumn fx:id="emailClm" prefWidth="230.0" styleClass="text-out" text="Email" />
+         <TableColumn fx:id="phoneClm" prefWidth="225.0" styleClass="text-out" text="Phone" />
+     </columns>
+   </TableView>
+   <Line endX="589.0" layoutX="111.0" layoutY="124.0" startX="-100.0" stroke="WHITE" strokeMiterLimit="1.0" strokeType="OUTSIDE" GridPane.rowIndex="5">
+      <GridPane.margin>
+         <Insets bottom="10.0" top="30.0" />
+      </GridPane.margin>
+   </Line>
+    
+    <HBox spacing="10" GridPane.columnSpan="3" GridPane.rowIndex="6">
+        <Button fx:id="addBtn" onAction="#handleAdd" styleClass="button" text="Add" />
+        <Button fx:id="deleteBtn" onAction="#handleDelete" disable="true" styleClass="button" text="Delete" />
+        <Button fx:id="selectBtn" onAction="#handleSelect" disable="true" styleClass="button" text="Select" />
+        <Button fx:id="paygBtn" disable="true" onAction="#handlePAYG" styleClass="button" text="PAYG" />
+        <Button fx:id="stpBtn" onAction="#handleSTP" text="STP" />
+        <Button fx:id="closeBtn" onAction="#handleClose" styleClass="button" text="Close" />
+      <padding>
+         <Insets left="25.0" top="20.0" />
+      </padding>
+    </HBox>   
+    <stylesheets>
+        <URL value="@stpfx.css" />
+    </stylesheets>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints maxHeight="33.0" minHeight="4.5" prefHeight="33.0" />
+      <RowConstraints maxHeight="28.5" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+</GridPane>

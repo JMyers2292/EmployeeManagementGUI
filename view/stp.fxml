@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="850.0" prefWidth="600.0" styleClass="background" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StpController">
+   <children>
+      <TableView fx:id="stpTv" items="${controller.STP.Employees}" prefHeight="646.0" prefWidth="600.0" styleClass="column-header">
+        <columns>
+            <TableColumn fx:id="nameTv" prefWidth="120.0" text="Name">
+                <cellValueFactory><PropertyValueFactory property="name" /></cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="wageTv" prefWidth="120.0" text="Wages">
+                <!--  <cellValueFactory><PropertyValueFactory property="income"/></cellValueFactory>-->
+            </TableColumn>
+            <TableColumn fx:id="taxTv" prefWidth="120.0" text="Tax">
+                 <!-- <cellValueFactory><PropertyValueFactory property="deduction"/></cellValueFactory>-->
+            </TableColumn>
+            <TableColumn fx:id="netTv" prefWidth="120.0" text="Net">
+               <!--   <cellValueFactory><PropertyValueFactory property="net"/></cellValueFactory>-->
+            </TableColumn>
+            <TableColumn fx:id="superTv" prefWidth="120.0" text="Super">
+                <!--  <cellValueFactory><PropertyValueFactory property="super"/></cellValueFactory>-->
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Line endX="499.29290771484375" endY="-2.8284270763397217" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+               <children>
+                  <Label styleClass="label-opac" text="Total Wages:">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin></Label>
+                  <Text fx:id="totalWageTxt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-out">
+                     <HBox.margin>
+                        <Insets left="41.0" top="8.0" />
+                     </HBox.margin></Text>
+                  <Label styleClass="label-opac" text="Total Tax:">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin></Label>
+                  <Text fx:id="totalTaxTxt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-out">
+                     <HBox.margin>
+                        <Insets left="40.0" top="8.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <children>
+                  <Label styleClass="label-opac" text="Total Net:">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin></Label>
+                  <Text fx:id="totalNetTxt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-out">
+                     <HBox.margin>
+                        <Insets left="67.0" top="9.0" />
+                     </HBox.margin></Text>
+                  <Label styleClass="label-opac" text="Total Super:">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin></Label>
+                  <Text fx:id="totalSuperTxt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-out">
+                     <HBox.margin>
+                        <Insets left="20.0" top="9.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <children>
+                  <Label styleClass="label-opac" text="Quarter BAS:">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin></Label>
+                  <Text fx:id="basTxt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-out">
+                     <HBox.margin>
+                        <Insets left="41.0" top="7.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </GridPane>
+      <Line endX="499.29290771484375" endY="-2.8284270763397217" layoutX="111.0" layoutY="660.0" startX="-100.0" stroke="WHITE" strokeWidth="2.0" />
+      <HBox alignment="CENTER">
+         <children>
+            <Button fx:id="closeBtn" alignment="CENTER" mnemonicParsing="false" onAction="#handleClose" text="Close" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="40.0" />
+         </padding>
+      </HBox>
+   </children>
+    <stylesheets>
+        <URL value="@stpfx.css" />
+    </stylesheets>
+</VBox>
